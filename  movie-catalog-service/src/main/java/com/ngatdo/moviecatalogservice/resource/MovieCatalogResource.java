@@ -19,7 +19,11 @@ public class MovieCatalogResource
 {
     @Autowired
     RestTemplate restTemplate;
-
+    @RequestMapping("/")
+    public  String welcome()
+    {
+        return "WELCOME TO CATALOG SERVICE";
+    }
     @RequestMapping("/{userId}")
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId)
     {
